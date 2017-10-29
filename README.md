@@ -4,6 +4,11 @@ It works by using jedisct1's dnsblast to send a large amount of DNS requests to 
 
 `<random char><random char><random char><random char>.com`
 
+# Running
+To run, type in:
+
+`curl -l https://raw.githubusercontent.com/InnovativeInventor/blaster/master/blaster.sh | bash`
+
 # Credits
 Developers who worked on this:
 - deathbybandaid
