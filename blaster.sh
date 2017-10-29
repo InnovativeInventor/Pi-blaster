@@ -10,7 +10,7 @@ check_exit () {
 }
 
 ## Disclaimers before we actually do anything
-whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." 10 80
+whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." --defaultno 10 80
 check_exit
 
 ## Deps
