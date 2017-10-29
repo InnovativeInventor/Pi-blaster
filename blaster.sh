@@ -31,7 +31,11 @@ fi
 ## Vars
 HOSTTOBLAST=$(whiptail --inputbox "What DNS server would you like to blast?" 10 80 "" 3>&1 1>&2 2>&3)
 AMOUNTOFBLASTS=$(whiptail --inputbox "How many requests would you like to send?" 10 80 "" 3>&1 1>&2 2>&3)
-whiptail --title "Disclamer" --msgbox "The developers of this program are not responsible for any excessive load caused by this program. By selecting OK, you have made yourself aware of the potential repercussions of your actions. To exit, press control-c." --cancel-button Cancel 10 80
+whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." 10 80
+if [ $? -eq 1 ]
+  echo "Ok, exiting . . ."
+  exit 1
+fi
 
 sudo git clone https://github.com/jedisct1/dnsblast /etc/dnsblast
 cd /etc/dnsblast
