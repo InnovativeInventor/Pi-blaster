@@ -2,19 +2,6 @@
 #This is a shell dnsblaster to stress-test pihole
 
 ## Deps
-WHATITIS=dnsutils
-WHATPACKAGE=dnsutils
-timestamp=$(echo `date`)
-if
-which $WHATITIS >/dev/null;
-then
-echo ""
-printf "$yellow"  "$WHATITIS is installed"
-else
-printf "$yellow"  "Installing $WHATITIS"
-sudo apt-get install -y $WHATPACKAGE
-fi
-
 WHATITIS=whiptail
 WHATPACKAGE=whiptail
 timestamp=$(echo `date`)
