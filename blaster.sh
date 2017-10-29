@@ -1,6 +1,13 @@
 #!/bin/bash
 ## This is a shell dnsblaster to stress-test dns servers
 
+## Disclaimers before we actually do anything
+whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." 10 80
+if [ $? -eq 1 ]; then
+  echo "Ok, exiting . . ."
+  exit 1
+fi
+
 ## Deps
 WHATITIS=whiptail
 WHATPACKAGE=whiptail
@@ -26,13 +33,6 @@ printf "$yellow"  "$WHATITIS is installed"
 else
 printf "$yellow"  "Installing $WHATITIS"
 sudo apt-get install -y $WHATPACKAGE
-fi
-
-## Disclaimers
-whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." 10 80
-if [ $? -eq 1 ]; then
-  echo "Ok, exiting . . ."
-  exit 1
 fi
 
 ## Vars
