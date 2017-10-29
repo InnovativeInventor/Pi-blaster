@@ -6,8 +6,8 @@ It works by using jedisct1's dnsblast to send a large amount of DNS requests to 
 
 # Credits
 Developers who worked on this:
-deathbybandaid
-InnovativeInventor
+- deathbybandaid
+- InnovativeInventor
 
 # dnsblast
 https://github.com/jedisct1/dnsblast
