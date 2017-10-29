@@ -12,7 +12,7 @@ echo ""
 printf "$yellow"  "$WHATITIS is installed"
 else
 printf "$yellow"  "Installing $WHATITIS"
-apt-get install -y $WHATPACKAGE
+sudo apt-get install -y $WHATPACKAGE
 fi
 
 WHATITIS=whiptail
@@ -38,10 +38,7 @@ cd /etc/dnsblast
 sudo make
 /etc/dnsblast/dnsblast $HOSTTOBLAST $AMOUNTOFBLASTS
 
-rm -r
-
-## End Loop
-done
+sudo rm -r /etc/dnsblast
 
 ## Remove hostlist
 rm $DOMAINLIST
