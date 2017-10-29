@@ -41,7 +41,7 @@ sudo apt-get install -y $WHATPACKAGE
 fi
 
 ## Vars
-HOSTTOBLAST=$(whiptail --inputbox "What DNS server would you like to blast?" 10 80 "" 3>&1 1>&2 2>&3)
+HOSTTOBLAST=$(whiptail --inputbox "What is the IP address of the DNS server would you like to test? For pi-hole, this would be pi.hole." 10 80 "" 3>&1 1>&2 2>&3)
 check_exit
 AMOUNTOFBLASTS=$(whiptail --inputbox "How many requests would you like to send?" 10 80 "" 3>&1 1>&2 2>&3)
 check_exit
