@@ -1,12 +1,17 @@
 #!/bin/bash
 ## This is a shell dnsblaster to stress-test dns servers
 
+## Checking for the status of each whiptail command, and if no/cancel is selected, this function will exit
+check_exit () {
+  if [ $? -eq 1 ]; then
+    echo "Ok, exiting . . ."
+    exit 1
+  fi
+}
+
 ## Disclaimers before we actually do anything
 whiptail --title "Disclamer" --yesno "The developers of this program are not responsible for any excessive load on DNS servers caused by this program. By selecting yes, you agree not to use this program in a malicious way. To exit, press control-c." 10 80
-if [ $? -eq 1 ]; then
-  echo "Ok, exiting . . ."
-  exit 1
-fi
+check_exit
 
 ## Deps
 WHATITIS=whiptail
@@ -37,7 +42,9 @@ fi
 
 ## Vars
 HOSTTOBLAST=$(whiptail --inputbox "What DNS server would you like to blast?" 10 80 "" 3>&1 1>&2 2>&3)
+check_exit
 AMOUNTOFBLASTS=$(whiptail --inputbox "How many requests would you like to send?" 10 80 "" 3>&1 1>&2 2>&3)
+check_exit
 
 sudo git clone https://github.com/jedisct1/dnsblast /etc/dnsblast
 cd /etc/dnsblast
@@ -51,4 +58,5 @@ if [ $? -eq 1 ]; then
   # Deleting dnsblast
   sudo rm -r /etc/dnsblast
 fi
+
 exit 0
