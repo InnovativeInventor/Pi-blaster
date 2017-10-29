@@ -43,6 +43,3 @@ sudo make
 /etc/dnsblast/dnsblast $HOSTTOBLAST $AMOUNTOFBLASTS
 
 sudo rm -r /etc/dnsblast
-
-## Remove hostlist
-rm $DOMAINLIST
